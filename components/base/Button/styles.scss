@@ -1,0 +1,24 @@
+.button {
+  border-color: transparent;
+  outline: none;
+  padding: 10px;
+  color: map-get($font-colors, 'white');
+  border-radius: 10px;
+  cursor: pointer;
+
+	&:active,
+	&:focus {
+		border-color: transparent;
+		outline: none;
+	}
+
+	@each $name, $color in $button-colors{
+		&.button--#{$name}{
+			background-color: $color;
+			
+			&:hover {
+				background: lighten( $color, 10% )
+			}
+		}
+	}
+}

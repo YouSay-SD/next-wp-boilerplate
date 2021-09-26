@@ -1,0 +1,64 @@
+.wysiwyg {
+  h1, h2, h3, h4, h5, h6{
+		margin: rem-calc( 0 0 16 );
+		display: inline-block;
+	}
+
+	h4 {
+		font-size: rem-calc(21);
+		line-height: rem-calc(27);
+	}
+
+	h5,h6 {
+		font-size: rem-calc(18);
+		line-height: rem-calc(22);
+	}
+
+	p{
+		font-size: rem-calc( 16 );
+		line-height: rem-calc( 24 );
+		margin: rem-calc( 0 0 16 );
+	}
+
+  strong {
+    font-weight: map-get($font-weights, 'bold');
+  }
+
+	ul, ol {
+		line-height: 1;
+		margin: rem-calc( 0 0 16 0);
+
+		li{
+			position: relative;
+			margin: rem-calc( 0 0 10 16 );
+
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	ul{
+		list-style: disc;
+	}
+
+	a {
+		transition: $global-transition;
+
+		&:hover,
+		&:active,
+		&:focus {
+			// text-decoration: underline;
+			// text-decoration-color: $secondary;
+		}
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	li > ul,
+	li > ol {
+		margin-left: rem-calc( 16 );
+	}
+}

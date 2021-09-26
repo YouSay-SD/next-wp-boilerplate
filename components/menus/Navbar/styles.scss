@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+
+  &__link {
+    padding: 5px 15px;
+
+    &.active {
+      font-weight: 600;
+    }
+  }
+}

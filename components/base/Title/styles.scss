@@ -1,0 +1,17 @@
+.title {
+  &__tag {
+    color: $white;
+
+    &--big {
+      font-size: 4rem;
+    }
+
+    &--medium {
+      font-size: 3rem;
+    }
+
+    &--small {
+      font-size: 2rem;
+    }
+  }
+}

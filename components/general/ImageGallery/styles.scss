@@ -1,0 +1,16 @@
+.image-gallery {
+  &__heading {
+    margin-bottom: 30px;
+  }
+
+  &__slick {
+    .slick-list {
+      .slick-track {
+        .slick-slide {
+          position: relative;
+          min-height: 500px;
+        }
+      }
+    }
+  }
+}

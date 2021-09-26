@@ -1,0 +1,13 @@
+.hero {
+  position: relative;
+  min-height: 600px;
+
+  &__img {
+    opacity: .6;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+  }
+}
