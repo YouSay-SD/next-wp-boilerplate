@@ -1,0 +1,22 @@
+body {
+	font-family: $font;
+}
+
+iframe {
+	width: 100%;
+}
+
+a {
+  @extend .button;
+  text-decoration: none;
+}
+
+.prehead {
+	font-size: rem-calc(13);
+	line-height: rem-calc(18);
+	letter-spacing: rem-calc(2.29);
+	color: $secondary;
+	font-weight: map-get($font-weights, 'extra-bold');
+	font-family: $font;
+	text-transform: uppercase;
+}

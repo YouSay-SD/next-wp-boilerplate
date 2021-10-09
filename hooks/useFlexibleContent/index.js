@@ -1,13 +1,14 @@
+import { getPageData } from 'graphQl/queries/pageQueries';
 import { useQuery } from 'react-query';
-import { fetcher } from 'utils/fetcher';
 
 const useFlexibleContent = ({ pageSlug, options = {} }) => {
   const getData = async () => {
-    return fetcher(`${process.env.reactAppUrl}/api/page/${pageSlug}`);
+    return getPageData({
+      slug: pageSlug,
+    })
   }
 
   const { data, isError, isLoading } = useQuery(`FLEXIBLE_CONTENT_${pageSlug.toUpperCase()}`, getData, options);
-
   return {
     data, 
     isError,

@@ -1,6 +1,12 @@
 // Colors
+$black: #000000;
 $white: #FFFFFF;
 $primary: #ff7401;
+$secondary: #00A0B1;
+$tertiary: #FF7471;
+
+// Fonts
+$font: 'Open Sans', sans-serif;
 
 // Font Colors
 $font-colors: (
@@ -29,6 +35,8 @@ $background-colors: (
 // Buttons
 $button-colors: (
 	'primary': $primary,
+	'secondary': $secondary,
+	'tertiary': $tertiary,
 );
 
 // Font Weights

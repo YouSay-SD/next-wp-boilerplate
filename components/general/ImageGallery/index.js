@@ -1,6 +1,4 @@
-import Image from 'next/image';
-import { Container, Heading, Slick } from 'components';
-import { loaderImage } from 'utils/loaderImage';
+import { Container, Heading, Slick, ImageWp } from 'components';
 
 const ImageGallery = ({ seoTitle, gallery, wysiwyg }) => {
   return (
@@ -14,17 +12,13 @@ const ImageGallery = ({ seoTitle, gallery, wysiwyg }) => {
 
         {gallery &&
           <Slick className='image-gallery__slick'>
-            {gallery.map(({ databaseId, sourceUrl, srcSet, altText }) => {
+            {gallery.map(( image ) => {
               return (
-                <Image
-                  key={databaseId} 
-                  src={sourceUrl}
-                  srcSet={srcSet} 
-                  alt={altText} 
+                <ImageWp
+                  key={image.databaseId} 
+                  image={image}
                   layout="fill"
                   objectFit="cover"
-                  placeholder='blur'
-                  blurDataURL={loaderImage()}
                 />
               )
             })}

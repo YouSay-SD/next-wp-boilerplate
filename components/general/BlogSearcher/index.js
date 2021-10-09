@@ -18,8 +18,6 @@ export const BlogSearcher = ({ seoTitle, description }) => {
     key,
   });
 
-  console.log('datA', data)
-
   const posts = data?.cptBlogs?.nodes;
 
   return (

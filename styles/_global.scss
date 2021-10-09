@@ -3,26 +3,12 @@ body {
   padding: 0;
   margin: 0;
   background-color: #282c34;
-  color: #ffffff;
-}
-
-
-a {
-  color: inherit;
-  text-decoration: none;
+  color: $white;
 }
 
 * {
   box-sizing: border-box;
 }
-
-
-a {
-  color: white;
-  padding: 5px 14px;
-  text-decoration: initial;
-}
-
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -68,8 +54,4 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
 }

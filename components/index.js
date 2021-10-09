@@ -12,6 +12,9 @@ export { default as Input } from './base/Input';
 export { default as Textarea } from './base/Textarea';
 export { default as Button } from './base/Button';
 export { default as Heading } from './base/Heading';
+export { default as ImageWp } from './base/ImageWp';
+export { default as MediaGroup } from './base/MediaGroup';
+export { default as ActionGroup } from './base/ActionGroup';
 
 // Gravity Form
 export { default as FormGf } from './gravityForm/FormGf';
@@ -25,6 +28,7 @@ export { default as BlogPicker } from './general/BlogPicker';
 export { default as BlogSearcher } from './general/BlogSearcher';
 export { default as Hero } from './general/Hero';
 export { default as Contact } from './general/Contact';
+export { default as LeftRight } from './general/LeftRight';
 
 // Cards
 export { default as Card } from './cards/Card';

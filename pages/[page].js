@@ -29,7 +29,7 @@ export const getStaticProps = async ({ params }) => {
   const data = await getPageData({
     slug: params.page
   });
-
+  
   return {
     props: {
       data

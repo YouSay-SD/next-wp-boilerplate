@@ -10,6 +10,8 @@ const Navbar = () => {
   
   const menuItems = data?.menu?.menuItems.edges;
 
+  console.log('menu', menuItems)
+
   return (
     <nav className='navbar'>
       <Link
@@ -18,7 +20,7 @@ const Navbar = () => {
         <a
           className={`navbar__link ${asPath == '/' ? 'active' : ''}`}
         >
-          Home
+          Home!
         </a>
       </Link>
 
