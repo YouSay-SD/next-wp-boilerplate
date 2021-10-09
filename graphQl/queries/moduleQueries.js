@@ -1,9 +1,10 @@
-import { queryCpt, queryDescription, queryImage, queryPaddingOptions, queryTitle, queryWysiwyg } from "./acfQueries";
+import { queryCpt } from "./acfQueries";
 import { queryCptAcf } from "./cptQueries";
+import { querySeoTitle, queryDescription, queryWysiwyg, queryPaddingOptions, queryMediaGroup, queryActionGroup } from "./supportQueries";
 
 // Module: Image Gallery
 export const queryImageGallery = `
-  ${queryTitle}
+  ${querySeoTitle}
   ${queryDescription}
   gallery {
     databaseId
@@ -16,7 +17,7 @@ export const queryImageGallery = `
 
 // Module: Post Picker
 export const queryBlogPicker = `
-  ${queryTitle}
+  ${querySeoTitle}
   ${queryDescription}
   ${queryPaddingOptions}
   blogPicker {
@@ -29,14 +30,25 @@ export const queryBlogPicker = `
 
 // Module: Blog Searcher
 export const queryBlogSearcher = `
-  ${queryTitle}
+  ${querySeoTitle}
   ${queryDescription}
   ${queryPaddingOptions}
 `;
 
 // Module: Contact
 export const queryContact = `
-  ${queryTitle}
+  ${querySeoTitle}
   ${queryWysiwyg}
+  ${queryPaddingOptions}
+`;
+
+// Module: Left/Right
+export const queryLeftRight = `
+  prehead
+  contentSide
+  ${querySeoTitle}
+  ${queryWysiwyg}
+  ${queryMediaGroup}
+  ${queryActionGroup}
   ${queryPaddingOptions}
 `;

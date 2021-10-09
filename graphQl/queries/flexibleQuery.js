@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { queryBlogPicker, queryBlogSearcher, queryContact, queryImageGallery } from "./moduleQueries";
+import { queryBlogPicker, queryBlogSearcher, queryContact, queryImageGallery, queryLeftRight } from "./moduleQueries";
 import dynamic from 'next/dynamic';
 
 /***************************************************/   
@@ -98,6 +98,10 @@ export const indexFlexibleContent = [
   {
     moduleName: 'Contact',
     moduleQuery: queryContact,
+  },
+  {
+    moduleName: 'LeftRight',
+    moduleQuery: queryLeftRight,
   }
 ]
 
@@ -106,6 +110,7 @@ export const dynamicComponents = {
   BlogPicker: dynamic(() => import('components/general/BlogPicker')),
   BlogSearcher: dynamic(() => import('components/general/BlogSearcher')),
   Contact: dynamic(() => import('components/general/Contact')),
+  LeftRight: dynamic(() => import('components/general/LeftRight')),
 };
 
 // export const queryFlexibleContent = async (templateName) => {

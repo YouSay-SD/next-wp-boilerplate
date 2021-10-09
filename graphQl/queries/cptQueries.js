@@ -1,7 +1,8 @@
 import { gql } from "graphql-request";
 import { client } from "graphQl/client";
 import { capitalizeFirstLetter } from "utils/capitalizeFirstLetter";
-import { queryCpt, queryImage, queryWysiwyg } from "./acfQueries";
+import { queryCpt } from "./acfQueries";
+import { queryWysiwyg, queryImage } from "./supportQueries";
 
 /***************************************************/   
 /* Queries: CPT

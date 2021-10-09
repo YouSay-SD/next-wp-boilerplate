@@ -8,8 +8,11 @@ export const getPageData = async ({ slug }) => {
     uri: slug
   }
 
+  console.log('SLUG', slug)
+  console.log('REQUEST Flexible')
   // Get Page Data
   const { pageBy } = await client.request(GET_FLEXIBLE_CONTENT, variables)
+  console.log('PAGEBY', pageBy)
   const flexibleContent = pageBy.flexibleContent.flexibleContent;
 
   const dataFlexible = flexibleContent?.map(currentModule => {
