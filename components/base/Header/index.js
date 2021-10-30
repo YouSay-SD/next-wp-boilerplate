@@ -1,11 +1,23 @@
-import { Navbar } from 'components';
+import { Container, ImageWp, Navbar } from 'components';
 
-const Header = () => {
+const Header = ({ acf: {header} }) => {
   return (
     <header className='header'>
-      <div className='header__container'>
+      <Container 
+        className='header__container'
+        size='large'
+      >
+        <div className='header__logo'>
+          <ImageWp
+            image={header.image}
+            isFallback={false}
+            width='100%'
+            height='30%'
+            objectFit='contain'
+          />
+        </div>
         <Navbar />
-      </div>
+      </Container>
     </header>
   )
 }

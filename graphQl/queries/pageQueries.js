@@ -1,6 +1,7 @@
-import { client } from 'graphQl/client';
-import uniqid from 'uniqid';
 import { GET_FLEXIBLE_CONTENT } from './flexibleQuery';
+import { client } from 'graphQl/client';
+import { gql } from 'graphql-request';
+import uniqid from 'uniqid';
 
 // Get Page Data
 export const getPageData = async ({ slug }) => {
@@ -8,11 +9,8 @@ export const getPageData = async ({ slug }) => {
     uri: slug
   }
 
-  console.log('SLUG', slug)
-  console.log('REQUEST Flexible')
   // Get Page Data
   const { pageBy } = await client.request(GET_FLEXIBLE_CONTENT, variables)
-  console.log('PAGEBY', pageBy)
   const flexibleContent = pageBy.flexibleContent.flexibleContent;
 
   const dataFlexible = flexibleContent?.map(currentModule => {
@@ -40,3 +38,39 @@ export const getPageData = async ({ slug }) => {
     flexibleData: dataFlexible
   };
 }
+
+// Query: Get all page routes
+export const GET_PAGE_ROUTES = gql`
+  query getPageRoutes {
+    pages {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+  }
+`;
+
+// Get All Page Routes
+export const getPageRoutes = async () => {
+  const data =  await client.request(GET_PAGE_ROUTES);
+  const paths = data?.pages.edges.map(({ node }) => `/${node.slug}`) || []
+
+  return paths;
+}
+
+// Get Page
+export const GET_PAGE = gql`
+  query getPage($uri: String) {
+    pageBy(uri: $uri) {
+      databaseId
+      uri
+      slug
+      title
+      template {
+        templateName
+      }
+    }
+  }
+`;

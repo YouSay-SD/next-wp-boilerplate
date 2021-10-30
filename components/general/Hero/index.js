@@ -1,23 +1,25 @@
-import Image from 'next/image';
-import { Container, Title } from 'components'
+import { BackgroundGroup, ButtonGroup, Container, P, Title, Wysiwyg } from 'components'
 
-const Hero = ({ title, image }) => {
+const Hero = ({ seoTitle: {title, tag}, buttonGroup, mediaGroup, backgroundGroup, type, prehead, wysiwyg }) => {
   return (
     <div className='hero'>
-      <Image
-        className='hero__img' 
-        layout="fill"
-        objectFit="cover"
-        src={image.sourceUrl}
-        srcSet={image.srcSet} 
-        alt={image.altText} 
-      />
+      <BackgroundGroup backgroundGroup={backgroundGroup} />
       <Container>
-        <Title 
-          className='hero__title'
-        >
-          {title}
-        </Title>
+        <div className='hero__content'>
+          <div className='hero__text-section'>
+            {prehead &&
+              <P>{prehead}</P>
+            }
+            {title && 
+              <Title tag={tag} size='lg'>{title}</Title>
+            }
+            {wysiwyg &&
+              <Wysiwyg>{wysiwyg}</Wysiwyg>
+            }
+
+            <ButtonGroup buttonGroup={buttonGroup} />
+          </div>
+        </div>
       </Container>
     </div>
   )

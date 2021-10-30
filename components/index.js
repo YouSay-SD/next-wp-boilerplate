@@ -14,7 +14,9 @@ export { default as Button } from './base/Button';
 export { default as Heading } from './base/Heading';
 export { default as ImageWp } from './base/ImageWp';
 export { default as MediaGroup } from './base/MediaGroup';
-export { default as ActionGroup } from './base/ActionGroup';
+export { default as ButtonGroup } from './base/ButtonGroup';
+export { default as BackgroundGroup } from './base/BackgroundGroup';
+export { default as Video } from './base/Video';
 
 // Gravity Form
 export { default as FormGf } from './gravityForm/FormGf';
@@ -29,6 +31,7 @@ export { default as BlogSearcher } from './general/BlogSearcher';
 export { default as Hero } from './general/Hero';
 export { default as Contact } from './general/Contact';
 export { default as LeftRight } from './general/LeftRight';
+export { default as Archive } from './general/Archive';
 
 // Cards
 export { default as Card } from './cards/Card';

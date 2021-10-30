@@ -1,6 +1,6 @@
-const Container = ({ children, className = '' }) => {
+const Container = ({ children, className = '', size = 'default' }) => {
   return (
-    <div className={`container ${className}`}>
+    <div className={`container ${className} container--${size}`}>
       {children}
     </div>
   )

@@ -11,6 +11,12 @@ a {
   text-decoration: none;
 }
 
+p{
+	color: $white;
+	font-size: rem-calc( 16 );
+	line-height: rem-calc( 24 );
+}
+
 .prehead {
 	font-size: rem-calc(13);
 	line-height: rem-calc(18);

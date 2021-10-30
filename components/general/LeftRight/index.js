@@ -1,6 +1,6 @@
-import { Container, Title, Wysiwyg, MediaGroup, ActionGroup } from 'components';
+import { Container, Title, Wysiwyg, MediaGroup, ButtonGroup } from 'components';
 
-const LeftRight = ({ seoTitle: {title, tag}, prehead, wysiwyg, mediaGroup, contentSide, actionGroup }) => {
+const LeftRight = ({ seoTitle: {title, tag}, prehead, wysiwyg, mediaGroup, contentSide, buttonGroup }) => {
   const mediaProps = {
     imageProps: {
       width: 1000,
@@ -24,11 +24,11 @@ const LeftRight = ({ seoTitle: {title, tag}, prehead, wysiwyg, mediaGroup, conte
               <Title tag={tag}>{title}</Title>
             }
             {wysiwyg &&
-              <Wysiwyg wysiwyg={wysiwyg} />
+              <Wysiwyg>{wysiwyg}</Wysiwyg>
             }
 
-            <ActionGroup
-              actionGroup={actionGroup}
+            <ButtonGroup
+              buttonGroup={buttonGroup}
               actionColor='secondary'
             />
           </div>

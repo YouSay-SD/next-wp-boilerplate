@@ -8,7 +8,7 @@ const Heading = ({ className = '', seoTitle: {title, tag}, wysiwyg, description 
       }
 
       {wysiwyg &&
-        <Wysiwyg wysiwyg={wysiwyg} />
+        <Wysiwyg>{wysiwyg}</Wysiwyg>
       }
 
       {description &&

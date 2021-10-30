@@ -1,0 +1,13 @@
+.video {
+  &:hover {
+    .video {
+      &__icon-play {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__icon-play {
+    transition: $global-transition;
+  }
+}

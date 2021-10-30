@@ -2,16 +2,19 @@
   &__tag {
     color: $white;
 
-    &--big {
-      font-size: 4rem;
+    &--lg {
+      font-size: rem-calc(48);
+      line-height: rem-calc(58);
     }
 
-    &--medium {
-      font-size: 3rem;
+    &--md {
+      font-size: rem-calc(40);
+      line-height: rem-calc(50);
     }
 
-    &--small {
-      font-size: 2rem;
+    &--sm {
+      font-size: rem-calc(30);
+      line-height: rem-calc(40);
     }
   }
 }

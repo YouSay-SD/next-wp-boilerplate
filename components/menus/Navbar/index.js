@@ -10,8 +10,6 @@ const Navbar = () => {
   
   const menuItems = data?.menu?.menuItems.edges;
 
-  console.log('menu', menuItems)
-
   return (
     <nav className='navbar'>
       <Link

@@ -1,0 +1,66 @@
+.archive {
+  &__container {
+    display: grid;
+    gap: 40px;
+  }
+
+  &__content {
+    display: grid;
+    gap: 80px;
+  }
+
+  &__section {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+
+    @include respondBelow(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__search-input {
+    width: 100%;
+    padding: rem-calc(10 20);
+    border-radius: 5px;
+  }
+
+  &__type-filter {
+    @include respondAbove(sm) {
+      grid-column: span 2;
+    }
+  }
+
+  &__section-header {
+    @include flexCenterVertical;
+    justify-content: space-between;
+  }
+
+  &__section-content {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    min-height: 350px;
+
+    &--featured {
+      .card {
+        &:first-of-type {
+          @include respondAbove(sm) {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+
+    @include respondBelow(sm) {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+  }
+}

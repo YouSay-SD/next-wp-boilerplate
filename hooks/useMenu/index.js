@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { client } from "graphQl/client";
-import { GET_MENU } from "graphQl/queries/queries";
+import { GET_MENU } from 'graphQl/queries/menuQueries';
 
 const useMenu = ({ id }) => {
   return useQuery(['MENU', id], async () => {

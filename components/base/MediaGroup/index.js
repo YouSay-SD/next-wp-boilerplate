@@ -1,7 +1,6 @@
-import ReactPlayer from 'react-player';
-import { ImageWp } from 'components';
+import { ImageWp, Video } from 'components';
 
-const MediaGroup = ({ mediaGroup: {mediaType, image, video}, mediaProps: {imageProps, videoProps} }) => {
+const MediaGroup = ({ mediaGroup: {mediaType, image, video, videoThumbnail}, mediaProps: {imageProps, videoProps} }) => {
   const renderImage = () => {
     if (image) {
       return (
@@ -18,10 +17,10 @@ const MediaGroup = ({ mediaGroup: {mediaType, image, video}, mediaProps: {imageP
   const renderVideo = () => {
     if (video) {
       return (
-        <ReactPlayer
+        <Video
           className='media-group__video'
+          thumbnail={videoThumbnail}
           url={video}
-          controls
           {...videoProps}
         />
       )

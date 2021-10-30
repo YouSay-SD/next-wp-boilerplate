@@ -1,4 +1,5 @@
 // Base
+@import '../components/base/Header/styles.scss';
 @import '../components/base/Container/styles.scss';
 @import '../components/base/Title/styles.scss';
 @import '../components/base/Section/styles.scss';
@@ -8,7 +9,11 @@
 @import '../components/base/Button/styles.scss';
 @import '../components/base/Heading/styles.scss';
 @import '../components/base/MediaGroup/styles.scss';
-@import '../components/base/ActionGroup/styles.scss';
+@import '../components/base/ButtonGroup/styles.scss';
+@import '../components/base/BackgroundGroup/styles.scss';
+@import '../components/base/P/styles.scss';
+@import '../components/base/Video/styles.scss';
+@import '../components/base/Footer/styles.scss';
 
 // General
 @import '../components/general/Hero/styles.scss';
@@ -17,6 +22,7 @@
 @import '../components/general/BlogSearcher/styles.scss';
 @import '../components/general/Contact/styles.scss';
 @import '../components/general/LeftRight/styles.scss';
+@import '../components/general/Archive/styles.scss';
 
 // Gravity Form
 @import '../components/gravityForm/FormGf/styles.scss';

@@ -8,16 +8,18 @@ const Card = ({ title, featuredImage, date, uri, categories, acf }) => {
   return (
     <div className='card'>
       <div className='card__image'>
-        <Image
-          src={acf.image.sourceUrl}
-          srcSet={acf.image.srcSet}
-          alt={title}
-          className='card__img'
-          layout="fill"
-          objectFit="cover"
-          placeholder='blur'
-          blurDataURL={loaderImage()}
-        />
+        {acf &&
+          <Image
+            src={acf.image.sourceUrl}
+            srcSet={acf.image.srcSet}
+            alt={title}
+            className='card__img'
+            layout="fill"
+            objectFit="cover"
+            placeholder='blur'
+            blurDataURL={loaderImage()}
+          />
+        }
         {categories?.nodes?.length &&
           <div className='card__categories'>
             {categories.nodes.map(({ databaseId, name }) => {
@@ -32,8 +34,8 @@ const Card = ({ title, featuredImage, date, uri, categories, acf }) => {
       <div className='card__content'>
         <P>{date}</P>
         <Title 
-          h='3'
-          size='small'
+          tag='h3'
+          size='sm'
         >
           {title}
         </Title>

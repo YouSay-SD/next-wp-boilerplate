@@ -1,4 +1,4 @@
-export const queryImage = `
+const queryImage = `
   image {
     databaseId
     sourceUrl
@@ -7,7 +7,16 @@ export const queryImage = `
   }
 `;
 
-export const queryLink = `
+const queryImageMobile = `
+  imageMobile {
+    databaseId
+    sourceUrl
+    srcSet(size: MEDIUM)
+    altText
+  }
+`;
+
+const queryLink = `
   link {
     target
     title
@@ -15,43 +24,87 @@ export const queryLink = `
   }
 `;
 
-export const queryMediaGroup = `
+const queryBackgroundColor = `
+  backgroundColor {
+    color
+  }
+`;
+
+const queryBackgroundImage = `
+  backgroundImage {
+    ${queryImage}
+    ${queryImageMobile}
+    opacityOverlay
+  }
+`;
+
+const queryBackgroundGroup = `
+  backgroundGroup {
+    type
+    ${queryBackgroundColor}
+    ${queryBackgroundImage}
+  }
+`;
+
+const queryMediaGroup = `
   mediaGroup {
     mediaType
     video
+    videoThumbnail {
+      databaseId
+      sourceUrl
+      srcSet(size: MEDIUM)
+      altText
+    }
     ${queryImage}
   }
 `;
 
-export const queryActionGroup = `
-  actionGroup {
+const queryButtonGroup = `
+  buttonGroup {
     alignment
-    actions {
+    buttons {
       display
       ${queryLink}
     }
   }
 `;
 
-export const querySeoTitle = `
+const querySeoTitle = `
   seoTitle {
     title
     tag
   }
 `;
 
-export const queryDescription = `
+const queryDescription = `
   description
 `;
 
-export const queryWysiwyg = `
+const queryWysiwyg = `
   wysiwyg
 `;
 
-export const queryPaddingOptions = `
+const queryPaddingOptions = `
   paddingOptions {
     paddingTop
     paddingBottom
   }
 `;
 
+const supportQueries = {
+  queryImage,
+  queryImageMobile,
+  queryLink,
+  queryBackgroundColor,
+  queryBackgroundImage,
+  queryBackgroundGroup,
+  queryMediaGroup,
+  queryButtonGroup,
+  querySeoTitle,
+  queryDescription,
+  queryWysiwyg,
+  queryPaddingOptions
+}
+
+export default supportQueries;

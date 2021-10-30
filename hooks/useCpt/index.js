@@ -1,8 +1,6 @@
 import { gql } from "graphql-request";
 import { useQuery } from 'react-query';
-import { queryCpt } from "graphQl/queries/acfQueries";
-import { capitalizeFirstLetter } from "utils/capitalizeFirstLetter";
-import { queryCategories, queryTags, queryTaxonomies, queryCptAcf } from "graphQl/queries/cptQueries";
+import { queryCategories, queryCpt, queryCptAcf, queryTags, queryTaxonomies } from "graphQl/queries/cptQueries";
 import { client } from "graphQl/client";
 
 /*
@@ -21,25 +19,48 @@ const useCpt = ({
   taxonomies = null, 
   categories = false, 
   tags = false, 
-  key = ' ' 
+  key = ' '
 }) => {
-  // const postTypeLabel = `cpt${capitalizeFirstLetter(postType)}s`;
+  let keyQuery = 'CPT';
 
-  return useQuery(`CPT_${postType.toUpperCase()}_${key.toUpperCase()}`, async () => {
+  // if (!Array.isArray(postType)) {
+  //   let postTypes = [postType];
+  // }
+
+  const postTypes = Array.isArray(postType) ? postType : [postType];
+
+  if (Array.isArray(postType)) {
+    postType.forEach(cpt => {
+      keyQuery += `_${cpt}`;
+    })
+  } else {
+    keyQuery += `_${postType}`;
+  }
+
+  // console.log('TYPES', postTypes)
+
+  // Set Key Query
+  // postType.forEach(cpt => {
+  //   keyQuery += `_${cpt}`;
+  // })
+  keyQuery += key == ' ' || key == '' ? '' : `_${key}`; 
+
+  return useQuery(keyQuery.toUpperCase(), async () => {
     const data = await client.request(
       gql`
-        query ${postType}s {
-          cpt${postType}s(where: {search: "${key}", orderby: {order: ${order}, field: ${orderBy}}}) {
-            nodes {
-              ${queryCpt}
-              ${queryCptAcf[postType]}
-              ${taxonomies ? queryTaxonomies(taxonomies) : ''}
-              ${categories ? queryCategories() : ''}
-              ${tags ? queryTags() : ''}
-            }
-          }
-        }
-      `
+        query GET_CPT{${postTypes.map((cpt) => {
+          return (`
+            cpt${cpt}s(where: {search: "${key}", orderby: {order: ${order}, field: ${orderBy}}}) {
+              nodes {
+                ${queryCpt}
+                ${queryCptAcf[cpt]}
+                ${taxonomies ? queryTaxonomies(taxonomies) : ''}
+                ${categories ? queryCategories() : ''}
+                ${tags ? queryTags() : ''}
+              }
+            }`)
+        })}
+      }`
     )
     
     return data;

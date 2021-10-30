@@ -6,6 +6,7 @@ const ButtonGf = ({ className = '', text }) => {
       <Button 
         className='button-gf__btn'
         color='primary'
+        isAnchor={false}
       >
         {text ? text : 'Submit'}
       </Button>

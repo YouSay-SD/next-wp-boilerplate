@@ -1,12 +1,60 @@
+// import { queryWysiwyg, queryImage, queryButtonGroup, queryBackgroundGroup, querySeoTitle } from "./supportQueries";
+import { supportQueries } from "graphQl/queries";
+import { cptConfig } from "config/cptConfig";
 import { gql } from "graphql-request";
 import { client } from "graphQl/client";
-import { capitalizeFirstLetter } from "utils/capitalizeFirstLetter";
-import { queryCpt } from "./acfQueries";
-import { queryWysiwyg, queryImage } from "./supportQueries";
+
+const { queryWysiwyg, queryImage, queryButtonGroup, queryBackgroundGroup, querySeoTitle } = supportQueries;
 
 /***************************************************/   
 /* Queries: CPT
 /***************************************************/
+
+
+// Queries
+export const queryCpt = `
+  title
+  databaseId
+  date
+  slug
+  status
+  uri
+  featuredImage {
+    node {
+      databaseId
+      sourceUrl
+      srcSet(size: MEDIUM)
+      altText
+    }
+  }
+  contentType {
+    node {
+      name
+    }
+  }
+`;
+
+// Queries CPT ACF
+export const queryCptAcf = {
+  Blog: `
+    acf {
+      ${queryImage}
+      ${queryWysiwyg}
+    }
+    pageHeader {
+      ${queryHeroPost}
+    }
+  `,
+  CaseStudy: `
+    acf {
+      ${queryImage}
+      ${queryWysiwyg}
+    }
+    pageHeader {
+      ${queryHeroPost}
+    }
+  `
+}
 
 // Get CPT Data
 export const getCptData = async ({ slug, cpt }) => {
@@ -14,8 +62,10 @@ export const getCptData = async ({ slug, cpt }) => {
     slug
   };
 
-  const cptName = `cpt${capitalizeFirstLetter(cpt)}`;
-  const querySingle = await getSingleBySlug(cpt);
+  // const cptLabel = config.cpt.find(({ slug }) => slug === cpt).label;
+  const cptLabel = cptConfig.find(({ slug }) => slug === cpt).label;
+  const cptName = `cpt${cptLabel}`;
+  const querySingle = await getSingleBySlug(cptLabel);
   const data = await client.request(querySingle, variables);
   return data[cptName]
 }
@@ -61,20 +111,11 @@ export const queryTags = () => {
   `
 };
 
-// Queries CPT ACF
-export const queryCptAcf = {
-  Blog: `
-    acf {
-      ${queryImage}
-      ${queryWysiwyg}
-    }
-  `
-}
-
 // Get All Cpt Routes
 export const getCptRoutes = async () => {
-  // Put in this array the CPT that you use.
-  const cptNames = ['Blog'];
+  // const cptNames = config.cpt.map(({ label }) => label);
+  const cptNames = cptConfig.map(({ label }) => label);
+
 
   const data = await client.request(`
     query getCptRoutes {
@@ -116,14 +157,12 @@ export const getCptRoutes = async () => {
 }
 
 // Get single's data by slug
-// name: cpt's name 
-export const getSingleBySlug = async ( name ) => {
-  const cptName = capitalizeFirstLetter(name);
+export const getSingleBySlug = async ( cptLabel ) => {
   return gql`
     query getSingleBySlug($slug: ID!) {
-      cpt${cptName}(id: $slug, idType: SLUG) {
+      cpt${cptLabel}(id: $slug, idType: SLUG) {
         ${queryCpt}
-        ${queryCptAcf[cptName]}
+        ${queryCptAcf[cptLabel]}
       }
     }
   `

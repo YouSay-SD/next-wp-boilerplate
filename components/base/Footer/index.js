@@ -1,7 +1,11 @@
+import { Container, Navbar } from "components";
+
 const Footer = () => {
   return (
     <footer className='footer'>
-      <div className='footer__container'></div>
+      <Container className='footer__container'>
+        <Navbar />
+      </Container>
     </footer>
   )
 }

@@ -1,7 +1,7 @@
 // import React from 'react';
 // import './styles.scss';
 
-const Title = ({ children, size = 'medium', className = '', tag = 'h2', }) => {
+const Title = ({ children, size = 'md', className = '', tag = 'h2', }) => {
   const Tag = `${tag}`;
 
   return (

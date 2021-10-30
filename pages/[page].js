@@ -1,9 +1,9 @@
 import { HeadSeo } from 'components';
-import { getPageRoutes } from '../graphQl/queries/queries';
+import { getPageData, getPageRoutes } from 'graphQl/queries/pageQueries';
+import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
 import { Layout, FlexibleLayout } from 'layouts';
-import { getPageData } from 'graphQl/queries/pageQueries';
 
-const Page = ({ data }) => {
+const Page = ({ data, themeSetting }) => {
   const { title, slug, template:{templateName} } = data.pageData;
   return (
     <>
@@ -12,6 +12,7 @@ const Page = ({ data }) => {
       />
       <Layout
         className={`template-${templateName.toLowerCase()} page-${slug}`}
+        themeSetting={themeSetting}
       >
         <FlexibleLayout
           data={data}
@@ -26,13 +27,18 @@ export default Page;
 
 // Static Props
 export const getStaticProps = async ({ params }) => {
+  // Get Page Data
   const data = await getPageData({
     slug: params.page
   });
+
+  // Get Theme Setting Data
+  const themeSetting = await getThemeSettingData();
   
   return {
     props: {
-      data
+      data,
+      themeSetting
     }
   }
 }

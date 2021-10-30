@@ -1,4 +1,6 @@
 .wysiwyg {
+	color: $white;
+	
   h1, h2, h3, h4, h5, h6{
 		margin: rem-calc( 0 0 16 );
 		display: inline-block;
@@ -15,9 +17,9 @@
 	}
 
 	p{
+		color: $white;
 		font-size: rem-calc( 16 );
 		line-height: rem-calc( 24 );
-		margin: rem-calc( 0 0 16 );
 	}
 
   strong {

@@ -9,6 +9,10 @@
         .slick-slide {
           position: relative;
           min-height: 500px;
+
+          @include respondBelow(sm) {
+            min-height: 200px;
+          }
         }
       }
     }

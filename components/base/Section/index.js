@@ -1,6 +1,6 @@
-const Section = ({ moduleName, children, paddingOptions: {paddingTop, paddingBottom} }) => {
+const Section = ({ moduleName, children, paddingOptions }) => {
   return (
-    <section className={`section section--${moduleName} padding ${paddingTop} ${paddingBottom}`}>
+    <section className={`section section--${moduleName} padding ${paddingOptions?.paddingTop} ${paddingOptions?.paddingBottom}`}>
       {children}
     </section>
   )

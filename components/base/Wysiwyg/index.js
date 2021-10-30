@@ -1,8 +1,8 @@
-const Wysiwyg = ({ wysiwyg, className = '' }) => {
+const Wysiwyg = ({ children, className = '' }) => {
   return (
     <div 
       className={`wysiwyg ${className}`} 
-      dangerouslySetInnerHTML={{__html: wysiwyg}} 
+      dangerouslySetInnerHTML={{__html: children}} 
     />
   )
 }

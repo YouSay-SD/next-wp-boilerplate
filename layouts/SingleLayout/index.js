@@ -9,7 +9,7 @@ const SingleLayout = ({ title, featuredImage, acf: {wysiwyg, image} }) => {
       />
       <Container>
         <div className='single-layout__content'>
-          <Wysiwyg wysiwyg={wysiwyg} />
+          <Wysiwyg>{wysiwyg}</Wysiwyg>
         </div>
       </Container>
     </div>

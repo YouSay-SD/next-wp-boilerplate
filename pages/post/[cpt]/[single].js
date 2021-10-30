@@ -1,9 +1,11 @@
 import { HeadSeo } from 'components';
 import { getCptData, getCptRoutes } from 'graphQl/queries/cptQueries';
+import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
 import { Layout, SingleLayout } from 'layouts';
 import { capitalizeFirstLetter } from 'utils/capitalizeFirstLetter';
 
-const Single = ({ cptData, slug: {cpt, single} }) => {
+const Single = ({ cptData, slug: {cpt, single}, themeSetting }) => {
+  console.log('CPT', cptData)
   return (
     <>
       <HeadSeo 
@@ -12,6 +14,7 @@ const Single = ({ cptData, slug: {cpt, single} }) => {
       />
       <Layout
         className={`template-single cpt-${cpt} single-${cpt}-${single}`}
+        themeSetting={themeSetting}
       >
         <SingleLayout 
           {...cptData} 
@@ -31,8 +34,12 @@ export const getStaticProps = async ({ params: {cpt, single} }) => {
     cpt
   })
 
+  // Get Theme Setting Data
+  const themeSetting = await getThemeSettingData();
+
   return {
     props: {
+      themeSetting,
       cptData,
       slug: {
         cpt,

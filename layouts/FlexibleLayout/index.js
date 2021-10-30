@@ -1,6 +1,6 @@
 import { useFlexibleContent } from 'hooks';
 import { Section } from 'components';
-import { dynamicComponents } from 'graphQl/queries/flexibleQuery';
+import { dynamicComponents } from 'config/moduleConfig';
 
 const FlexibleLayout = ({ data }) => {
   const { data: modules, isLoading } = useFlexibleContent({
@@ -19,7 +19,7 @@ const FlexibleLayout = ({ data }) => {
           <Section 
             key={moduleId}
             moduleName={moduleName} 
-            paddingOptions={moduleAcf.paddingOptions} 
+            paddingOptions={moduleAcf?.paddingOptions} 
           >
             <DynamicComponent
               {...moduleAcf}
