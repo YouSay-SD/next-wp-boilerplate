@@ -3,7 +3,9 @@ import { BackgroundGroup, ButtonGroup, Container, P, Title, Wysiwyg } from 'comp
 const Hero = ({ seoTitle: {title, tag}, buttonGroup, mediaGroup, backgroundGroup, type, prehead, wysiwyg }) => {
   return (
     <div className='hero'>
-      <BackgroundGroup backgroundGroup={backgroundGroup} />
+      {backgroundGroup &&
+        <BackgroundGroup backgroundGroup={backgroundGroup} />
+      }
       <Container>
         <div className='hero__content'>
           <div className='hero__text-section'>
@@ -16,8 +18,9 @@ const Hero = ({ seoTitle: {title, tag}, buttonGroup, mediaGroup, backgroundGroup
             {wysiwyg &&
               <Wysiwyg>{wysiwyg}</Wysiwyg>
             }
-
-            <ButtonGroup buttonGroup={buttonGroup} />
+            {buttonGroup &&
+              <ButtonGroup buttonGroup={buttonGroup} />
+            }
           </div>
         </div>
       </Container>

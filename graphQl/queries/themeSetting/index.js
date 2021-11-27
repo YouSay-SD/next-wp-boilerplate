@@ -4,8 +4,6 @@ import { supportQueries } from "graphQl/queries";
 
 const { queryImage } = supportQueries;
 
-console.log('supoort', supportQueries)
-
 const themeSettingHeaderQuery = `
   acfOptionsHeader {
     header {

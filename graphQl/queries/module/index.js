@@ -5,7 +5,6 @@
 
 import { supportQueries } from "..";
 
-// console.log('QUERIES', cptQueries)
 const { queryBackgroundGroup, queryButtonGroup, queryDescription, queryImage, queryMediaGroup, queryPaddingOptions, querySeoTitle, queryWysiwyg } = supportQueries;
 // const { queryCpt, queryCptAcf } = cptQueries;
 

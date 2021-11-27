@@ -210,6 +210,4 @@ const cptQueries = {
   queryCpt
 }
 
-console.log('CPT', cptQueries)
-
 export default cptQueries;

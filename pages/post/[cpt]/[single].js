@@ -4,7 +4,6 @@ import { Layout, SingleLayout } from 'layouts';
 import { capitalizeFirstLetter } from 'utils/capitalizeFirstLetter';
 
 const Single = ({ cptData, slug: {cpt, single}, themeSetting }) => {
-  console.log('CPT', cptData)
   return (
     <>
       <HeadSeo 

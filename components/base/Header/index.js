@@ -8,13 +8,15 @@ const Header = ({ acf: {header} }) => {
         size='large'
       >
         <div className='header__logo'>
-          <ImageWp
-            image={header.image}
-            isFallback={false}
-            width='100%'
-            height='30%'
-            objectFit='contain'
-          />
+          {header?.image &&
+            <ImageWp
+              image={header.image}
+              isFallback={false}
+              width='100%'
+              height='30%'
+              objectFit='contain'
+            />
+          }
         </div>
         <Navbar />
       </Container>

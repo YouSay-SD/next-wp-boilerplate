@@ -4,7 +4,7 @@ const SingleLayout = ({ title, featuredImage, acf: {wysiwyg, image} }) => {
   return (
     <div className='single-layout'>
       <Hero
-        title={title}
+        seoTitle={{title, tag: 'h2'}}
         image={image}
       />
       <Container>

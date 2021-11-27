@@ -1,7 +1,6 @@
 import { ImageWp } from "components"
 
 const BackgroundGroup = ({ backgroundGroup: {type, backgroundImage: {image, opacityOverlay}} }) => {
-  console.log('OPAC', opacityOverlay)
   const renderBackgroundImage = () => {
     return (
       <>

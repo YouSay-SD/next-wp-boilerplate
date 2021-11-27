@@ -2,8 +2,6 @@
 import { moduleQueries } from 'graphQl/queries';
 import dynamic from 'next/dynamic';
 
-console.log('MDAAAS2', moduleQueries)
-
 /* 
   In this array you must set all the modules that you use in your Flexible Content
 
