@@ -1,7 +1,9 @@
 import { gql } from "graphql-request";
 import { useQuery } from 'react-query';
-import { queryCategories, queryCpt, queryCptAcf, queryTags, queryTaxonomies } from "graphQl/queries/cptQueries";
+import { cptQueries } from "graphQl/queries";
 import { client } from "graphQl/client";
+
+const { queryCategories, queryCpt, queryCptAcf, queryTags, queryTaxonomies } = cptQueries;
 
 /*
   postType: string

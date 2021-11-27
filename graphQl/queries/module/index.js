@@ -1,7 +1,13 @@
-import { queryCpt, queryCptAcf } from "./cptQueries";
+// import { queryCpt, queryCptAcf } from "./cptQueries";
 // import { queryBackgroundGroup, queryButtonGroup, queryDescription, queryImage, queryMediaGroup, queryPaddingOptions, querySeoTitle, queryWysiwyg } from "./supportQueries";
-import { supportQueries } from "graphQl/queries";
+// import { cptQueries, supportQueries } from "graphQl/queries";
+// import cptQueries from 'graphQl/queries';
+
+import { supportQueries } from "..";
+
+// console.log('QUERIES', cptQueries)
 const { queryBackgroundGroup, queryButtonGroup, queryDescription, queryImage, queryMediaGroup, queryPaddingOptions, querySeoTitle, queryWysiwyg } = supportQueries;
+// const { queryCpt, queryCptAcf } = cptQueries;
 
 // Module: Hero
 const queryHero = `
@@ -74,50 +80,50 @@ const queryArchive = `
 `;
 
 // Module: Post Picker
+// const queryBlogPicker = `
+//   ${querySeoTitle}
+//   ${queryDescription}
+//   ${queryPaddingOptions}
+//   blogPicker {
+//     ... on CptBlog {
+//       ${queryCpt}
+//       ${queryCptAcf['Blog']}
+//     }
+//   }
+// `;
+
 const queryBlogPicker = `
   ${querySeoTitle}
   ${queryDescription}
   ${queryPaddingOptions}
   blogPicker {
     ... on CptBlog {
-      ${queryCpt}
-      ${queryCptAcf['Blog']}
+      title
+      databaseId
+      date
+      slug
+      status
+      uri
+      featuredImage {
+        node {
+          databaseId
+          sourceUrl
+          srcSet(size: MEDIUM)
+          altText
+        }
+      }
+      contentType {
+        node {
+          name
+        }
+      }
+      acf {
+        ${queryImage}
+        ${queryWysiwyg}
+      }
     }
   }
 `;
-
-// export const queryBlogPicker = `
-//   ${querySeoTitle}
-//   ${queryDescription}
-//   ${queryPaddingOptions}
-//   blogPicker {
-//     ... on CptBlog {
-//       title
-//       databaseId
-//       date
-//       slug
-//       status
-//       uri
-//       featuredImage {
-//         node {
-//           databaseId
-//           sourceUrl
-//           srcSet(size: MEDIUM)
-//           altText
-//         }
-//       }
-//       contentType {
-//         node {
-//           name
-//         }
-//       }
-//       acf {
-//         ${queryImage}
-//         ${queryWysiwyg}
-//       }
-//     }
-//   }
-// `;
 
 // Module Queries {}
 const moduleQueries = {

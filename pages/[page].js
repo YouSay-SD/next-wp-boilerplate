@@ -1,6 +1,7 @@
 import { HeadSeo } from 'components';
 import { getPageData, getPageRoutes } from 'graphQl/queries/pageQueries';
-import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
+// import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
+import { themeSettingQueries } from 'graphQl/queries';
 import { Layout, FlexibleLayout } from 'layouts';
 
 const Page = ({ data, themeSetting }) => {
@@ -33,7 +34,7 @@ export const getStaticProps = async ({ params }) => {
   });
 
   // Get Theme Setting Data
-  const themeSetting = await getThemeSettingData();
+  const themeSetting = await themeSettingQueries.getThemeSettingData();
   
   return {
     props: {

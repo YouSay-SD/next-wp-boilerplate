@@ -1,4 +1,4 @@
-import { GET_FLEXIBLE_CONTENT } from './flexibleQuery';
+import { flexibleQueries } from 'graphQl/queries';
 import { client } from 'graphQl/client';
 import { gql } from 'graphql-request';
 import uniqid from 'uniqid';
@@ -10,7 +10,7 @@ export const getPageData = async ({ slug }) => {
   }
 
   // Get Page Data
-  const { pageBy } = await client.request(GET_FLEXIBLE_CONTENT, variables)
+  const { pageBy } = await client.request(flexibleQueries.getFlexibleContent, variables)
   const flexibleContent = pageBy.flexibleContent.flexibleContent;
 
   const dataFlexible = flexibleContent?.map(currentModule => {

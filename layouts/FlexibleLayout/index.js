@@ -1,6 +1,7 @@
 import { useFlexibleContent } from 'hooks';
 import { Section } from 'components';
-import { dynamicComponents } from 'config/moduleConfig';
+import { dynamicComponents } from 'graphQl/queries/flexibleContent';
+// import { dynamicComponents } from 'config/moduleConfig';
 
 const FlexibleLayout = ({ data }) => {
   const { data: modules, isLoading } = useFlexibleContent({

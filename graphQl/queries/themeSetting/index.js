@@ -1,8 +1,12 @@
 import { gql } from "graphql-request";
 import { client } from "graphQl/client";
-import { queryImage } from "./supportQueries";
+import { supportQueries } from "graphQl/queries";
 
-export const themeSettingHeaderQuery = `
+const { queryImage } = supportQueries;
+
+console.log('supoort', supportQueries)
+
+const themeSettingHeaderQuery = `
   acfOptionsHeader {
     header {
       ${queryImage}
@@ -10,16 +14,22 @@ export const themeSettingHeaderQuery = `
   }
 `
 
-export const themeSettingQuery = gql`
+const themeSettingQuery = gql`
   query themeSetting {
     ${themeSettingHeaderQuery}
   }
 `;
 
 // Get Page Data
-export const getThemeSettingData = async () => {
+const getThemeSettingData = async () => {
   // Get Theme Setting Data
   const data = await client.request(themeSettingQuery);
 
   return { ...data }
 }
+
+const themeSettingQueries = {
+  getThemeSettingData,
+}
+
+export default themeSettingQueries;

@@ -1,10 +1,25 @@
-// import { queryWysiwyg, queryImage, queryButtonGroup, queryBackgroundGroup, querySeoTitle } from "./supportQueries";
-import { supportQueries } from "graphQl/queries";
-import { cptConfig } from "config/cptConfig";
-import { gql } from "graphql-request";
+// import { cptConfig } from "config/cptConfig";
+// import { moduleQueries, supportQueries } from "graphQl/queries";
+// import moduleQueries  from 'graphQl/queries';
+// console.log('MODULe', moduleQueries)
 import { client } from "graphQl/client";
+import { gql } from "graphql-request";
+import { moduleQueries, supportQueries } from "..";
 
-const { queryWysiwyg, queryImage, queryButtonGroup, queryBackgroundGroup, querySeoTitle } = supportQueries;
+const { queryWysiwyg, queryImage } = supportQueries;
+const { queryHeroPost } = moduleQueries;
+
+// console.log()
+export const cptConfig = [
+  {
+    slug: 'blog',
+    label: 'Blog'
+  },
+  {
+    slug: 'case-study',
+    label: 'CaseStudy'
+  },
+];
 
 /***************************************************/   
 /* Queries: CPT
@@ -12,7 +27,7 @@ const { queryWysiwyg, queryImage, queryButtonGroup, queryBackgroundGroup, queryS
 
 
 // Queries
-export const queryCpt = `
+const queryCpt = `
   title
   databaseId
   date
@@ -35,14 +50,11 @@ export const queryCpt = `
 `;
 
 // Queries CPT ACF
-export const queryCptAcf = {
+const queryCptAcf = {
   Blog: `
     acf {
       ${queryImage}
       ${queryWysiwyg}
-    }
-    pageHeader {
-      ${queryHeroPost}
     }
   `,
   CaseStudy: `
@@ -50,14 +62,32 @@ export const queryCptAcf = {
       ${queryImage}
       ${queryWysiwyg}
     }
-    pageHeader {
-      ${queryHeroPost}
-    }
   `
 }
 
+// const queryCptAcf = {
+//   Blog: `
+//     acf {
+//       ${queryImage}
+//       ${queryWysiwyg}
+//     }
+//     pageHeader {
+//       ${queryHeroPost}
+//     }
+//   `,
+//   CaseStudy: `
+//     acf {
+//       ${queryImage}
+//       ${queryWysiwyg}
+//     }
+//     pageHeader {
+//       ${queryHeroPost}
+//     }
+//   `
+// }
+
 // Get CPT Data
-export const getCptData = async ({ slug, cpt }) => {
+const getCptData = async ({ slug, cpt }) => {
   const variables = {
     slug
   };
@@ -71,7 +101,7 @@ export const getCptData = async ({ slug, cpt }) => {
 }
  
 // Get Taxonomies
-export const queryTaxonomies = (taxonomies) => {
+const queryTaxonomies = (taxonomies) => {
   return taxonomies.map((taxonomy) => {
     return `
       ${taxonomy} {
@@ -86,7 +116,7 @@ export const queryTaxonomies = (taxonomies) => {
 };
 
 // Get Categories
-export const queryCategories = () => {
+const queryCategories = () => {
   return `
     categories {
       nodes {
@@ -99,7 +129,7 @@ export const queryCategories = () => {
 };
 
 // Get Tags
-export const queryTags = () => {
+const queryTags = () => {
   return `
     tags {
       nodes {
@@ -112,7 +142,7 @@ export const queryTags = () => {
 };
 
 // Get All Cpt Routes
-export const getCptRoutes = async () => {
+const getCptRoutes = async () => {
   // const cptNames = config.cpt.map(({ label }) => label);
   const cptNames = cptConfig.map(({ label }) => label);
 
@@ -157,7 +187,7 @@ export const getCptRoutes = async () => {
 }
 
 // Get single's data by slug
-export const getSingleBySlug = async ( cptLabel ) => {
+const getSingleBySlug = async ( cptLabel ) => {
   return gql`
     query getSingleBySlug($slug: ID!) {
       cpt${cptLabel}(id: $slug, idType: SLUG) {
@@ -167,3 +197,19 @@ export const getSingleBySlug = async ( cptLabel ) => {
     }
   `
 }
+
+// CPT Queries Group
+const cptQueries = {
+  getSingleBySlug,
+  getCptRoutes,
+  queryTags,
+  queryCategories,
+  queryTaxonomies,
+  getCptData,
+  queryCptAcf,
+  queryCpt
+}
+
+console.log('CPT', cptQueries)
+
+export default cptQueries;

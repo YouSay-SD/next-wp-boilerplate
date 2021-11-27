@@ -11,43 +11,43 @@ console.log('MDAAAS2', moduleQueries)
   moduleQuery: queryImageGallery
 */
 
-export const moduleConfig = [
-  {
-    moduleName: 'Hero',
-    moduleQuery: moduleQueries.queryHero,
-  },
-  {
-    moduleName: 'ImageGallery',
-    moduleQuery: moduleQueries.queryImageGallery,
-  },
-  {
-    moduleName: 'BlogPicker',
-    moduleQuery: moduleQueries.queryBlogPicker,
-  },
-  {
-    moduleName: 'BlogSearcher',
-    moduleQuery: moduleQueries.queryBlogSearcher,
-  },
-  {
-    moduleName: 'Contact',
-    moduleQuery: moduleQueries.queryContact,
-  },
-  {
-    moduleName: 'LeftRight',
-    moduleQuery: moduleQueries.queryLeftRight,
-  },
-  {
-    moduleName: 'Archive',
-    moduleQuery: moduleQueries.queryArchive,
-  }
-]
+// export const moduleConfig = [
+//   {
+//     moduleName: 'Hero',
+//     moduleQuery: moduleQueries.queryHero,
+//   },
+//   {
+//     moduleName: 'ImageGallery',
+//     moduleQuery: moduleQueries.queryImageGallery,
+//   },
+//   {
+//     moduleName: 'BlogPicker',
+//     moduleQuery: moduleQueries.queryBlogPicker,
+//   },
+//   {
+//     moduleName: 'BlogSearcher',
+//     moduleQuery: moduleQueries.queryBlogSearcher,
+//   },
+//   {
+//     moduleName: 'Contact',
+//     moduleQuery: moduleQueries.queryContact,
+//   },
+//   {
+//     moduleName: 'LeftRight',
+//     moduleQuery: moduleQueries.queryLeftRight,
+//   },
+//   {
+//     moduleName: 'Archive',
+//     moduleQuery: moduleQueries.queryArchive,
+//   }
+// ]
 
-export const dynamicComponents = {
-  Hero: dynamic(() => import('components/general/Hero')),
-  ImageGallery: dynamic(() => import('components/general/ImageGallery')),
-  BlogPicker: dynamic(() => import('components/general/BlogPicker')),
-  BlogSearcher: dynamic(() => import('components/general/BlogSearcher')),
-  Contact: dynamic(() => import('components/general/Contact')),
-  LeftRight: dynamic(() => import('components/general/LeftRight')),
-  Archive: dynamic(() => import('components/general/Archive')),
-};
+// export const dynamicComponents = {
+//   Hero: dynamic(() => import('components/general/Hero')),
+//   ImageGallery: dynamic(() => import('components/general/ImageGallery')),
+//   BlogPicker: dynamic(() => import('components/general/BlogPicker')),
+//   BlogSearcher: dynamic(() => import('components/general/BlogSearcher')),
+//   Contact: dynamic(() => import('components/general/Contact')),
+//   LeftRight: dynamic(() => import('components/general/LeftRight')),
+//   Archive: dynamic(() => import('components/general/Archive')),
+// };
