@@ -29,9 +29,6 @@ const queryCpt = `
   slug
   status
   uri
-  pageHeader {
-    ${queryHeroPost}
-  }
   featuredImage {
     node {
       databaseId
