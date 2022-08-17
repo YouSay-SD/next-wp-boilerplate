@@ -1,0 +1,14 @@
+@import "../../../styles/baseline/_styles";
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  padding: 5px 15px;
+}
+
+.active {
+  font-weight: 600;
+}

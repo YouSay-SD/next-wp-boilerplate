@@ -2,16 +2,16 @@ import { HeadSeo } from 'components';
 import { getPageData } from 'graphQl/queries/pageQueries';
 // import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
 import { themeSettingQueries } from 'graphQl/queries';
-import { Layout, FlexibleLayout } from 'layouts';
+import Layout from 'components/layouts/Layout/Layout';
+import FlexibleLayout from 'components/layouts/FlexibleLayout/FlexibleLayout';
 
 const Page = ({ data, themeSetting }) => {
   const { title, slug, template:{templateName} } = data.pageData;
-
   return (
     <>
-      <HeadSeo
+      {/* <HeadSeo
        title={title}
-      />
+      /> */}
       <Layout
         className={`template-${templateName.toLowerCase()} page-${slug}`}
         themeSetting={themeSetting}

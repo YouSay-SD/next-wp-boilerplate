@@ -1,0 +1,19 @@
+@import "../../../styles/baseline/_styles";
+
+.buttonGroup {
+  @include flexCenterVertical;
+  flex-wrap: wrap;
+  gap: 15px;  
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.right {
+  justify-content: flex-end;
+}

@@ -1,0 +1,18 @@
+@import "../../../styles/baseline/_styles";
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  
+  @include respond-to($bp-lg) {
+    padding: 0 20px;
+  }
+}
+
+.default {
+  max-width: 1200px;
+}
+
+.large {
+  max-width: 1500px;
+}

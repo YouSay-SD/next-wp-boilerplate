@@ -37,13 +37,13 @@ export const moduleConfig = [
 ]
 
 export const dynamicComponents = {
-  Hero: dynamic(() => import('components/general/Hero')),
-  ImageGallery: dynamic(() => import('components/general/ImageGallery')),
-  BlogPicker: dynamic(() => import('components/general/BlogPicker')),
-  BlogSearcher: dynamic(() => import('components/general/BlogSearcher')),
-  Contact: dynamic(() => import('components/general/Contact')),
-  LeftRight: dynamic(() => import('components/general/LeftRight')),
-  Archive: dynamic(() => import('components/general/Archive')),
+  Hero: dynamic(() => import('components/organisms/Hero/Hero')),
+  ImageGallery: dynamic(() => import('components/organisms/ImageGallery/ImageGallery')),
+  BlogPicker: dynamic(() => import('components/organisms/BlogPicker/BlogPicker')),
+  BlogSearcher: dynamic(() => import('components/organisms/BlogSearcher/BlogSearcher')),
+  Contact: dynamic(() => import('components/organisms/Contact/Content')),
+  LeftRight: dynamic(() => import('components/organisms/LeftRight/LeftRight')),
+  Archive: dynamic(() => import('components/organisms/Archive/Archive')),
 };
 
 const getFlexibleContent = gql`

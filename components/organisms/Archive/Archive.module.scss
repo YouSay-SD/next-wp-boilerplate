@@ -1,0 +1,66 @@
+@import "../../../styles/baseline/_styles";
+
+.container {
+  display: grid;
+  gap: 40px;
+}
+
+.content {
+  display: grid;
+  gap: 80px;
+}
+
+.section {
+  display: grid;
+  gap: 30px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+
+  @include respond-to($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  padding: rem-calc(10 20);
+  border-radius: 5px;
+}
+
+.typeFilter {
+  @include respond-to($bp-md) {
+    grid-column: span 2;
+  }
+}
+
+.sectionHeader {
+  @include flexCenterVertical;
+  justify-content: space-between;
+}
+
+.sectionContent {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  min-height: 350px;
+
+  @include respond-to($bp-md) {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}
+
+.featured {
+  .card {
+    &:first-of-type {
+      @include respond-to($bp-md) {
+        grid-column: span 2;
+      }
+    }
+  }
+}

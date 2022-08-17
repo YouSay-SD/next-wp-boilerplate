@@ -1,0 +1,23 @@
+// Widths & Breakpoints
+$bp-xs: 321px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+// xxs: 321px,
+// xs: 576px,
+// sm: 768px,
+// md: 992px,
+// l: 1080px,
+// lg: 1200px,
+
+// Spacings
+$sp-xsmall: rem-calc(16);
+$sp-small: rem-calc(32);
+$sp-medium: rem-calc(48);
+$sp-large: rem-calc(60);
+$sp-xlarge: rem-calc(72);
+
+// Display Constants
+$border-radius-small: 0.2em;

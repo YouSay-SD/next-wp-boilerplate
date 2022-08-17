@@ -1,0 +1,43 @@
+// Colors
+$black: #000000;
+$white: #FFFFFF;
+$primary: #ff7401;
+$secondary: #00A0B1;
+$tertiary: #FF7471;
+
+// Font Colors
+$font-colors: (
+  'white': $white,
+  'grey': #778,
+  'dark': #000
+);
+
+// Border Colors
+$border: (
+  'light': #fff,
+  'grey-light': #a7a7a7,
+  'grey': #444444
+);
+
+// Backgrounds
+$background-colors: (
+  'light': #fff,
+  'grey-light': #eee,
+  'grey': #a7a7a7,
+  'grey-dark': #363636,
+  'dark': #151515,
+  'dark-absolute': #000000
+);
+
+// Buttons
+$button-colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'tertiary': $tertiary,
+);
+
+$success: #69af00;
+$error: #D1383D;
+
+$global-font-size: 16px;
+$global-transition: all .3s ease;

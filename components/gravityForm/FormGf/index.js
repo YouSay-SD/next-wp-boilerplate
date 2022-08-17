@@ -1,7 +1,9 @@
-import { FieldGf, ButtonGf, SuccessMessageGf } from 'components';
 import { client } from 'graphQl/client';
 import { SUBMIT_FORM } from 'graphQl/mutations/gravityFormMutation';
 import { useForm } from 'react-hook-form';
+import ButtonGf from '../ButtonGf';
+import FieldGf from '../FieldGf';
+import SuccessMessageGf from '../SuccessMessageGf';
 // import { useMutation } from 'react-query';
 
 const FormGf = ({ className = '', fields, button, successMessage }) => {

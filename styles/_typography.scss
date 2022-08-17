@@ -1,5 +1,5 @@
 body {
-	font-family: $font;
+	font-family: 'Open Sans', sans-serif;
 }
 
 iframe {
@@ -7,22 +7,36 @@ iframe {
 }
 
 a {
-  @extend .button;
+	border-color: transparent;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+	padding: 7px 20px;
+	transition: all .3s ease;
+	font-size: 16px;
+	line-height: 18px;
+
+	&:active,
+	&:focus {
+		border-color: transparent;
+		outline: none;
+	}
   text-decoration: none;
 }
 
 p{
-	color: $white;
-	font-size: rem-calc( 16 );
-	line-height: rem-calc( 24 );
+	color: white;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 .prehead {
-	font-size: rem-calc(13);
-	line-height: rem-calc(18);
-	letter-spacing: rem-calc(2.29);
-	color: $secondary;
-	font-weight: map-get($font-weights, 'extra-bold');
-	font-family: $font;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 2.29px;
+	color: #00A0B1;
+	font-weight: 800;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 }

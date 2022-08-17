@@ -1,4 +1,4 @@
-import { Button } from 'components';
+import Button from "components/atoms/Button/Button";
 
 const ButtonGf = ({ className = '', text }) => {
   return (

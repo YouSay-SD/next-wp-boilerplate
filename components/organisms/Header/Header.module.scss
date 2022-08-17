@@ -1,0 +1,22 @@
+@import "../../../styles/baseline/_styles";
+
+.header {
+  background-color: $black;
+  padding: rem-calc(15);
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  right: 0;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.logo {
+  position: relative;
+  max-width: 150px;
+  width: 100%;
+}

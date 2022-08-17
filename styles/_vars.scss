@@ -1,59 +1,59 @@
-// Colors
-$black: #000000;
-$white: #FFFFFF;
-$primary: #ff7401;
-$secondary: #00A0B1;
-$tertiary: #FF7471;
+// // Colors
+// $black: #000000;
+// $white: #FFFFFF;
+// $primary: #ff7401;
+// $secondary: #00A0B1;
+// $tertiary: #FF7471;
 
-// Fonts
-$font: 'Open Sans', sans-serif;
+// // Fonts
+// $font: 'Open Sans', sans-serif;
 
-// Font Colors
-$font-colors: (
-  'white': $white,
-  'grey': #778,
-  'dark': #000
-);
+// // Font Colors
+// $font-colors: (
+//   'white': $white,
+//   'grey': #778,
+//   'dark': #000
+// );
 
-// Border Colors
-$border: (
-  'light': #fff,
-  'grey-light': #a7a7a7,
-  'grey': #444444
-);
+// // Border Colors
+// $border: (
+//   'light': #fff,
+//   'grey-light': #a7a7a7,
+//   'grey': #444444
+// );
 
-// Backgrounds
-$background-colors: (
-  'light': #fff,
-  'grey-light': #eee,
-  'grey': #a7a7a7,
-  'grey-dark': #363636,
-  'dark': #151515,
-  'dark-absolute': #000000
-);
+// // Backgrounds
+// $background-colors: (
+//   'light': #fff,
+//   'grey-light': #eee,
+//   'grey': #a7a7a7,
+//   'grey-dark': #363636,
+//   'dark': #151515,
+//   'dark-absolute': #000000
+// );
 
-// Buttons
-$button-colors: (
-	'primary': $primary,
-	'secondary': $secondary,
-	'tertiary': $tertiary,
-);
+// // Buttons
+// $button-colors: (
+// 	'primary': $primary,
+// 	'secondary': $secondary,
+// 	'tertiary': $tertiary,
+// );
 
-// Font Weights
-$font-weights: (
-	'thin': 100,
-	'extra-light': 200,
-	'light': 300,
-	'regular': 400,
-	'medium': 500,
-	'semi-bold': 600,
-	'bold': 700,
-	'extra-bold': 800,
-	'black': 900,
-);
+// // Font Weights
+// $font-weights: (
+// 	'thin': 100,
+// 	'extra-light': 200,
+// 	'light': 300,
+// 	'regular': 400,
+// 	'medium': 500,
+// 	'semi-bold': 600,
+// 	'bold': 700,
+// 	'extra-bold': 800,
+// 	'black': 900,
+// );
 
-$success: #69af00;
-$error: #D1383D;
+// $success: #69af00;
+// $error: #D1383D;
 
 $global-font-size: 16px;
 $global-transition: all .3s ease;

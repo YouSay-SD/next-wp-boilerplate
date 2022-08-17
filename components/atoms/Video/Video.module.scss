@@ -1,0 +1,15 @@
+@import "../../../styles/baseline/_styles";
+
+.video {
+  &:hover {
+    .video {
+      &IconPlay {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &IconPlay {
+    transition: $global-transition;
+  }
+}

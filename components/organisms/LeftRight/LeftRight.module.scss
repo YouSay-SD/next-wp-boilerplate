@@ -1,0 +1,34 @@
+@import "../../../styles/baseline/_styles";
+
+.content {
+  display: flex;
+  gap: 30px;
+
+  @include respond-to($bp-md) {
+    flex-direction: column;
+  }
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.textSection {
+  @include flexCenterHorizontal;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+
+  @include respond-to($bp-md) {
+    width: 100%;
+  }
+}
+
+.mediaSection {
+  @include flexCenterVertical;
+  width: 50%;
+
+  @include respond-to($bp-md) {
+    width: 100%;
+  }
+}

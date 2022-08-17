@@ -1,4 +1,5 @@
-import { Input, Textarea } from 'components';
+import Input from "components/atoms/Input/Input";
+import Textarea from "components/atoms/Textarea/Textarea";
 
 const FieldGf = ({ label, placeholder, type, isRequired, errorMessage, innerRef, register, ...rest }) => {
   
