@@ -1,21 +1,20 @@
 import Container from "components/atoms/Container/Container";
 import Wysiwyg from "components/atoms/Wysiwyg/Wysiwyg";
 import Hero from "components/organisms/Hero/Hero";
+import styles from './SingleLayout.module.scss'
 
 const SingleLayout = ({ title, pageHeader, featuredImage, acf: {wysiwyg, image} }) => {
   return (
-    <div className='single-layout'>
+    <>
       <Hero
         seoTitle={{title, tag: 'h2'}}
         image={image}
         {...pageHeader}
       />
-      <Container>
-        <div className='single-layout__content'>
-          <Wysiwyg>{wysiwyg}</Wysiwyg>
-        </div>
+      <Container className={styles.container}>
+        <Wysiwyg>{wysiwyg}</Wysiwyg>
       </Container>
-    </div>
+    </>
   )
 }
 

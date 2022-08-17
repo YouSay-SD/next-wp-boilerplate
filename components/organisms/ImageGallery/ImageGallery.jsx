@@ -4,12 +4,13 @@ import ImageWp from 'components/atoms/ImageWp/ImageWp';
 import Slick from 'components/molecules/Slick/Slick';
 import styles from './ImageGallery.module.scss'
 
-const ImageGallery = ({ seoTitle, gallery, wysiwyg }) => {
+const ImageGallery = ({ seoTitle, gallery, wysiwyg, description }) => {
   return (
     <Container>
       <Heading
         seoTitle={seoTitle}
         wysiwyg={wysiwyg}
+        description={description}
         className={styles.heading}
       />
 
