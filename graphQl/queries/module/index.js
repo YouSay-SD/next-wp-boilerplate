@@ -1,10 +1,4 @@
-// import { queryCpt, queryCptAcf } from "./cptQueries";
-// import { queryBackgroundGroup, queryButtonGroup, queryDescription, queryImage, queryMediaGroup, queryPaddingOptions, querySeoTitle, queryWysiwyg } from "./supportQueries";
-// import { cptQueries, supportQueries } from "graphQl/queries";
-// import cptQueries from 'graphQl/queries';
-
 import { supportQueries } from "..";
-
 const { queryBackgroundGroup, queryButtonGroup, queryDescription, queryImage, queryMediaGroup, queryPaddingOptions, querySeoTitle, queryWysiwyg } = supportQueries;
 // const { queryCpt, queryCptAcf } = cptQueries;
 

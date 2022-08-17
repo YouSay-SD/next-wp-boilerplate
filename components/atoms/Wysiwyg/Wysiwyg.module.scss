@@ -4,7 +4,7 @@
 	color: $white;
 	
   h1, h2, h3, h4, h5, h6{
-		margin: rem-calc( 0 0 16 );
+		margin: 0 0 16px;
 		display: inline-block;
 	}
 
@@ -30,11 +30,11 @@
 
 	ul, ol {
 		line-height: 1;
-		margin: rem-calc( 0 0 16 0);
+		margin: 0 0 16px 0;
 
 		li{
 			position: relative;
-			margin: rem-calc( 0 0 10 16 );
+			margin: 0 0 10 16px;
 
 			&:last-of-type{
 				margin-bottom: 0;
@@ -63,6 +63,6 @@
 
 	li > ul,
 	li > ol {
-		margin-left: rem-calc( 16 );
+		margin-left: 16px;
 	}
 }

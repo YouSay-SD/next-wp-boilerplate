@@ -1,6 +1,6 @@
 import Container from 'components/atoms/Container/Container';
+import FormGf from 'components/atoms/FormGf/FormGf';
 import Heading from 'components/atoms/Heading/Heading';
-import FormGf from 'components/gravityForm/FormGf';
 import useGravityForm from 'hooks/useGravityForm';
 import styles from './Content.module.scss'
 

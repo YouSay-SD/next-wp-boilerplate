@@ -1,10 +1,12 @@
+@import "../../../styles/baseline/_styles";
+
 .button {
   border-color: transparent;
   outline: none;
   color: map-get($font-colors, 'white');
   border-radius: 10px;
   cursor: pointer;
-	padding: rem-calc(7 20);
+	padding: 7px 20px;
 	transition: $global-transition;
 	font-size: rem-calc(16);
 	line-height: rem-calc(18);

@@ -1,9 +1,11 @@
+// Working In Progress
 import { client } from 'graphQl/client';
 import { SUBMIT_FORM } from 'graphQl/mutations/gravityFormMutation';
 import { useForm } from 'react-hook-form';
-import ButtonGf from '../ButtonGf';
-import FieldGf from '../FieldGf';
-import SuccessMessageGf from '../SuccessMessageGf';
+import ButtonGf from '../ButtonGf/ButtonGf';
+import FieldGf from '../FieldGf/FieldGf';
+import SuccessMessageGf from '../SuccessMessageGf/SuccessMessageGf';
+import styles from './FormGf.module.scss'
 // import { useMutation } from 'react-query';
 
 const FormGf = ({ className = '', fields, button, successMessage }) => {
@@ -47,7 +49,7 @@ const FormGf = ({ className = '', fields, button, successMessage }) => {
 
   return (
     <form 
-      className={`form-gf ${className}`}
+      className={`${styles.formGf} ${className}`}
       method='post'
       // onSubmit={handleSubmit}
       onSubmit={onSubmit}

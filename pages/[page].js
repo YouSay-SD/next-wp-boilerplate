@@ -1,5 +1,4 @@
-import { getPageData, getPageRoutes } from 'graphQl/queries/pageQueries';
-// import { getThemeSettingData } from 'graphQl/queries/themeSettingQueries';
+import { getPageData } from 'graphQl/queries/pageQueries';
 import { themeSettingQueries } from 'graphQl/queries';
 import Layout from 'components/layouts/Layout/Layout';
 import HeadSeo from 'components/atoms/HeadSeo/HeadSeo';
@@ -34,25 +33,13 @@ export const getServerSideProps = async ({ params }) => {
     slug: params.page
   });
 
-  // const paths = await getPageRoutes();
-
   // Get Theme Setting Data
   const themeSetting = await themeSettingQueries.getThemeSettingData();
   
   return {
     props: {
-      // params: paths,
       data,
       themeSetting
     }
   }
 }
-
-// Static Paths - Routes pre-rendering
-// export const getStaticPaths = async () => {
-//   const paths = await getPageRoutes();
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }

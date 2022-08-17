@@ -1,0 +1,10 @@
+@import "../../../styles/baseline/_styles";
+
+.fieldGf {
+  display: grid;
+  gap: 5px;
+}
+
+.error {
+  color: $error;
+}

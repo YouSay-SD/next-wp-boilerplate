@@ -1,7 +1,3 @@
-// import { cptConfig } from "config/cptConfig";
-// import { moduleQueries, supportQueries } from "graphQl/queries";
-// import moduleQueries  from 'graphQl/queries';
-// console.log('MODULe', moduleQueries)
 import { client } from "graphQl/client";
 import { gql } from "graphql-request";
 import { moduleQueries, supportQueries } from "..";
@@ -25,7 +21,6 @@ export const cptConfig = [
 /* Queries: CPT
 /***************************************************/
 
-
 // Queries
 const queryCpt = `
   title
@@ -34,6 +29,9 @@ const queryCpt = `
   slug
   status
   uri
+  pageHeader {
+    ${queryHeroPost}
+  }
   featuredImage {
     node {
       databaseId
