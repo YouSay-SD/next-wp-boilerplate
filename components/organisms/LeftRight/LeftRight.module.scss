@@ -5,7 +5,7 @@
   gap: 30px;
 
   @include respond-to($bp-md) {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 }
 
